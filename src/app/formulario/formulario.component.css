@@ -1,0 +1,13 @@
+header .navbar {
+  background-color: turquoise;
+}
+.bg-purple{
+  background-color: rgb(160, 107, 221);
+}
+
+h6{
+  color: rgb(139, 93, 192) ;
+}
+#enviar{
+  background-color: rgb(160, 107, 221);
+}
