@@ -1,6 +1,76 @@
+
 header .navbar {
   background-color: turquoise;
 }
+
+#calculadora{
+	background: url("../../assets/calculadora.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+div .card-header, .card-footer{
+	background-color:rgba(64, 224, 208, 0.781);
+	color: white;
+}
+
+div .card-body{
+	background-color: white;
+	color:  rgb(105, 105, 105);
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 10px;
+  border-radius: 5px;  
+  background: #e2e2e2;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: solid 1px;
+  border-radius: 50%; 
+  background: rgb(160, 107, 221);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+   width: 20px;
+  height: 20px;
+  border: solid 1px;
+  border-radius: 50%;
+  background: rgb(160, 107, 221);
+  cursor: pointer;
+}
+
+#como-solicitar{
+		margin: 5px;
+  		border-radius: 5px;
+ 		box-shadow: rgba(158, 158, 158, 0.8) 0 0 5px;
+		background-color: rgb(160, 107, 221);
+		color: rgb(252, 247, 247);
+	}
+
+#gallery h2{
+	color:  rgb(160, 107, 221);
+	text-shadow: 1px 1px 1px rgb(214, 214, 214);
+	letter-spacing: 2px;
+}
+
+.cuota{
+color:  rgb(160, 107, 221);
+}
+
+#felicidad{
+		color: #414040;
+	}
 
 .modal-login {		
 		color: #636363;
@@ -97,3 +167,4 @@ header .navbar {
 div .clave a{
 		color:rgb(160, 107, 221);
 	}
+

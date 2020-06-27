@@ -9,15 +9,23 @@
     color: turquoise;
   }
 
-  .infromacion li {
-    font-size:10px;
+.bglight{
+background-color: rgb(238, 237, 237);
+  }
+  
+.bgsecond{
+    background-color: rgb(160, 107, 221);
+  }
+
+.infromacion li {
+    font-size:15px;
     list-style: none;
     display: inline;
     color: black;
     padding: 0.5em;
   }
 
-  #llamanos{
-    text-shadow: 1px 1px 1px rgb(214, 214, 214);
-  color: rgb(160, 107, 221);
+#llamanos{
+    text-shadow: 1px 1px 1px rgba(214, 214, 214, 0.774);
+  color: white;
 }

@@ -30,12 +30,11 @@ export class HomeComponent implements OnInit {
     this.resultado = '';
     this.cuotaMensual;
     this.total;
-
-
   }
 
   ngOnInit(): void {
 
+    this.calculo(this.importe, this.meses)
   }
 
   async entrarEspacioCliente(event, formLogin) {
@@ -50,7 +49,7 @@ export class HomeComponent implements OnInit {
     formLogin.reset();
 
     try {
-      this.token = await this.appService.postLogin(this.user); /// convert promise to observable
+      this.token = await this.appService.postLogin(this.user);
 
       this.appService.setToken(this.token.token);
       this.appService.setRol(this.token.rol);
@@ -73,17 +72,14 @@ export class HomeComponent implements OnInit {
     meses = this.meses;
     let interes = 0.55;
 
-    //cambiamos las variables a meses
     let i = interes / 100;
 
-    //hacemos unos cálculos intermedios
     let factor = Math.pow(i + 1, meses);
     let cuota = importe * i * factor / (factor - 1);
 
     this.cuotaMensual = Math.round(cuota);
     this.total = this.cuotaMensual * meses;
 
-    //mostramos el resultadom
     this.resultado = "El importe solicitado es de " + importe + "€ a " + meses + " meses, con un interés mensual de " + i * 100 + "%. Tu cuota mensual es de " + this.cuotaMensual + "€.";
 
     this.appService.datosResultado(this.resultado);
