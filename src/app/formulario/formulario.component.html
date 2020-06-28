@@ -14,7 +14,6 @@
 
 </header>
 
-<!--MAIN -->
 
 <main role="main" class="container">
     <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded shadow-sm">
@@ -38,6 +37,9 @@
                     <strong class="d-block text-gray-dark">Nombre</strong>
                     <input type="text" name="nombre" class="form-control" formControlName="nombre"
                         placeholder="Introduce tu nombre">
+                    <p class="error"
+                        *ngIf="formulario.controls.nombre.errors?.required && formulario.controls.nombre.touched">Es
+                        necesario que introduzcas tu nombre</p>
                 </div>
             </div>
 
@@ -46,6 +48,9 @@
                     <strong class="d-block text-gray-dark">Apellidos</strong>
                     <input type="text" name="apellidos" class="form-control" formControlName="apellidos"
                         placeholder="Introduce tus apellidos">
+                    <p class="error"
+                        *ngIf="formulario.controls.apellidos.errors?.required && formulario.controls.apellidos.touched">
+                        Es necesario que introduzcas tus apellidos</p>
                 </div>
             </div>
 
@@ -54,7 +59,16 @@
                 <div class="media-body pb-3 mb-0 border-bottom border-gray">
                     <strong class="d-block text-gray-dark">Documento de identidad</strong>
                     <input type="text" name="dni" class="form-control" formControlName="dni"
-                        placeholder="Introduce tu numero de DNI o NIE">
+                        placeholder="Introduce tu número de DNI o NIE">
+                    <p class="error"
+                        *ngIf="formulario.controls.dni.errors?.minlength && formulario.controls.dni.touched">
+                        Debe contener 9 caracteres</p>
+                    <p class="error"
+                        *ngIf="formulario.controls.dni.errors?.maxlength && formulario.controls.dni.touched">
+                        Debe contener 9 caracteres</p>
+                    <p class="error"
+                        *ngIf="formulario.controls.dni.errors?.required && formulario.controls.dni.touched">
+                        Es necesario que introduzcas tu documento de identidad</p>
                 </div>
             </div>
 
@@ -63,6 +77,9 @@
                     <strong class="d-block text-gray-dark">Clave</strong>
                     <input type="password" name="clave" class="form-control" formControlName="clave"
                         placeholder="Introduce una clave personal">
+                    <p class="error"
+                        *ngIf="formulario.controls.clave.errors?.required && formulario.controls.clave.touched">
+                        Es necesario que introduzcas una clave personal</p>
                 </div>
             </div>
 
@@ -71,6 +88,9 @@
                     <strong class="d-block text-gray-dark">Fecha de nacimiento</strong>
                     <input type="text" name="fecha_nacimiento" class="form-control" formControlName="fecha_nacimiento"
                         placeholder="Introduce tu fecha de nacimiento">
+                    <p class="error"
+                        *ngIf="formulario.controls.fecha_nacimiento.errors?.required && formulario.controls.fecha_nacimiento.touched">
+                        Es necesario que introduzcas tu fecha de nacimiento</p>
                 </div>
             </div>
 
@@ -79,6 +99,16 @@
                     <strong class="d-block text-gray-dark">Teléfono</strong>
                     <input type="text" name="telefono" class="form-control" formControlName="telefono"
                         placeholder="Introduce tu número teléfono">
+                    <p class="error"
+                        *ngIf="formulario.controls.telefono.errors?.minlength && formulario.controls.telefono.touched">
+                        No es correcto, el número debe contener 9 dígitos</p>
+                    <p class="error"
+                        *ngIf="formulario.controls.telefono.errors?.maxlength && formulario.controls.telefono.touched">
+                        No es correcto, el número debe contener 9 dígitos</p>
+                    <p class="error"
+                        *ngIf="formulario.controls.telefono.errors?.required && formulario.controls.telefono.touched">
+                        Es necesario que introduzcas tu número de teléfono</p>
+
                 </div>
             </div>
 
@@ -87,6 +117,9 @@
                     <strong class="d-block text-gray-dark">Domicilio</strong>
                     <input type="text" name="direccion" class="form-control" formControlName="direccion"
                         placeholder="Introduce tu dirección de domicilio completa">
+                    <p class="error"
+                        *ngIf="formulario.controls.direccion.errors?.required && formulario.controls.direccion.touched">
+                        Es necesario que introduzcas tu dirección de domicilio</p>
                 </div>
             </div>
 
@@ -95,6 +128,9 @@
                     <strong class="d-block text-gray-dark">Email</strong>
                     <input type="text" name="email" class="form-control" formControlName="email"
                         placeholder="Introduce tu dirección de email">
+                    <p class="error"
+                        *ngIf="formulario.controls.email.errors?.required && formulario.controls.email.touched">
+                        Es necesario que introduzcas tu dirección de email</p>
                 </div>
             </div>
 
@@ -116,6 +152,9 @@
                     <strong class="d-block text-gray-dark">Cuenta bancaria</strong>
                     <input type="text" name="banco" class="form-control" formControlName="banco"
                         placeholder="Introduce el IBAN de tu cuenta bancaria donde quieres el ingreso">
+                    <p class="error"
+                        *ngIf="formulario.controls.banco.errors?.required && formulario.controls.banco.touched">
+                        Es necesario que introduzcas el código IBAN completo</p>
                 </div>
             </div>
 
@@ -128,10 +167,10 @@
             </div>
 
             <div class="text-center mt-3">
-                <input id="enviar" type="submit" class="btn btn-outline-light" value="Enviar">
+                <input [disabled]=" !formulario.valid" id="enviar" type="submit" class="btn btn-outline-light"
+                    value="Enviar">
             </div>
-            <!--[disabled]=" !formulario.valid"
-    -->
+
         </form>
 
     </div>

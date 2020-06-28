@@ -11,3 +11,15 @@ h6{
 #enviar{
   background-color: rgb(160, 107, 221);
 }
+
+input.ng-valid.ng-touched {
+    border: 3px solid green;
+}
+
+input.ng-invalid.ng-touched {
+    border: 3px solid red;
+}
+
+.error {
+    color: red;
+}
